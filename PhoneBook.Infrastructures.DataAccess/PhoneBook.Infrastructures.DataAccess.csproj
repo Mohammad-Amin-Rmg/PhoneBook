@@ -20,8 +20,4 @@
     <ProjectReference Include="..\PhoneBook.Domain.Entities\PhoneBook.Domain.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Tags\" />
-  </ItemGroup>
-
 </Project>
