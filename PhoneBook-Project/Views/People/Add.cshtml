@@ -4,67 +4,68 @@
 @section stylesheet{
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 }
-<div class="col-lg-7">
-    <div class="p-5">
-        <div class="text-center">
-            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-        </div>
-        <form asp-action="Add" asp-controller="People" method="post" class="user" enctype="multipart/form-data">
-            <div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" asp-for="FirstName" id="exampleFirstName" placeholder="First Name">
-                    <span asp-validation-for="FirstName"></span>
 
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" asp-for="LastName" id="exampleLastName" placeholder="Last Name">
-                    <span asp-validation-for="LastName"></span>
-
-                </div>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="col-lg-7">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
             </div>
-            <div class="form-group">
-                <input type="email" class="form-control form-control-user" asp-for="Email" id="exampleInputEmail" placeholder="Email Address">
-                <span asp-validation-for="Email"></span>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" asp-for="Address" id="exampleInputAddress" placeholder="Address">
-                    <span asp-validation-for="Address"></span>
-
+            <form asp-action="Add" asp-controller="People" method="post" class="user" enctype="multipart/form-data">
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user" asp-for="FirstName" id="exampleFirstName" placeholder="First Name">
+                        <span asp-validation-for="FirstName"></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" asp-for="LastName" id="exampleLastName" placeholder="Last Name">
+                        <span asp-validation-for="LastName"></span>
+                    </div>
                 </div>
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="file" class="form-control form-control-user" asp-for="Image" id="image">
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-user" asp-for="Email" id="exampleInputEmail" placeholder="Email Address">
+                    <span asp-validation-for="Email"></span>
                 </div>
-            </div>
-            <div class="form-group row">
-                <select name="SelectedTag" class="form-control select2" multiple>
-                    @foreach (var item in Model.TagsForDisplay)
-                    {
-                        <option value="@item.Id">@item.Title</option>
-                    }
-                </select>
-            </div>
-
-
-            <input type="submit" class="btn btn-primary btn-user btn-block"> Register Account
-
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user" asp-for="Address" id="exampleInputAddress" placeholder="Address">
+                        <span asp-validation-for="Address"></span>
+                    </div>
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="file" class="form-control form-control-user" asp-for="Image" id="image">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <select name="SelectedTag" class="form-control select2" multiple>
+                        @foreach (var item in Model.TagsForDisplay)
+                        {
+                            <option value="@item.Id">@item.Title</option>
+                        }
+                    </select>
+                </div>
+                <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account">
+                <hr>
+                <a href="index.html" class="btn btn-google btn-user btn-block">
+                    <i class="fab fa-google fa-fw"></i> Register with Google
+                </a>
+                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                </a>
+            </form>
             <hr>
-            <a href="index.html" class="btn btn-google btn-user btn-block">
-                <i class="fab fa-google fa-fw"></i> Register with Google
-            </a>
-            <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-            </a>
-        </form>
-        <hr>
-        <div class="text-center">
-            <a class="small" href="forgot-password.html">Forgot Password?</a>
-        </div>
-        <div class="text-center">
-            <a class="small" href="login.html">Already have an account? Login!</a>
+            <div class="text-center">
+                <a class="small" href="forgot-password.html">Forgot Password?</a>
+            </div>
+            <div class="text-center">
+                <a class="small" href="login.html">Already have an account? Login!</a>
+            </div>
         </div>
     </div>
 </div>
+
+
+
+
 
 @section scripts{
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

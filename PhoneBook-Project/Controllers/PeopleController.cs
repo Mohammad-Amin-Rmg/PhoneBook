@@ -19,7 +19,8 @@ namespace PhoneBook_Project.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var people = _personRespository.GetAll().ToList();
+            return View(people);
         }
 
         public IActionResult Add()
@@ -48,7 +49,7 @@ namespace PhoneBook_Project.Controllers
                 _personRespository.Add(personModel);
                 return RedirectToAction("Index");
             }
-      
+
             return View();
         }
     }
